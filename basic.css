@@ -1,0 +1,234 @@
+
+/* 
+    Created on : 29 Jul 2024, 07:32:53
+    Author     : holmesj
+*/
+
+
+
+
+
+
+
+/* Set height of body and the document to 100% to enable "full page tabs" */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #000000;
+  color: white;
+  float: left;
+  border: 2px solid #FFFFFF;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+  border-radius: 20px;
+  /* border-color: black; */
+}
+
+.tablink:hover {
+  background-color: #004A00;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 30px 20px;
+  height: 100%;
+}
+
+
+// BAE Official colours purple #770077 and grey #777777
+// BAE website uses this orange #D64102, this grey #474C55, light grey #C4C4C4
+
+#Message {background: linear-gradient(45deg, rgba(40,40,40,1) 0%, rgba(70,70,70,1) 50%, rgba(40,40,40,1) 100%);
+          //background-color: #ED1A3B;}
+// #News {background-color: green;}
+#News {background-color: #003478;} // LM official colour
+//{background: radial-gradient(circle, rgba(45,45,45,1) 0%, rgba(102,102,102,1) 50%, rgba(45,45,45,1) 100%);}
+//{background: linear-gradient(45deg, rgba(85,85,85,1) 0%, rgba(102,102,102,1) 50%, rgba(85,85,85,1) 100%);}
+
+#Contact {background-color: blue;}
+//#About {background-color: orange;}
+
+input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+  accent-color: #ED1A3B;
+}
+##validateCB {
+#  accent-color: #ED1A3B;
+#}
+
+
+footer {
+    text-align: center;
+#    margin-left: auto;
+#    margin-right: auto;
+#    margin: 0 auto;
+}
+
+
+
+.tinted-image {
+  
+  width: 300px;
+  height: 200px;
+  
+  background: 
+    /* top, transparent red */ 
+    linear-gradient(
+      rgba(255, 0, 0, 0.45), 
+      rgba(255, 0, 0, 0.45)
+    ),
+    /* bottom, image */
+    url(images/backgroundF35_BAE.png);
+}
+
+
+
+body {
+  background-color:  #ED1A3B;
+/*  background-image: url('images/backgroundF35_BAE.png'); */
+  width: 1024px;
+  height: 1024px; /* 768px; */
+  background: 
+/*
+linear-gradient(
+      rgba(255, 0, 0, 0.45), 
+      rgba(0, 0, 0, 0.45)
+    ),
+*/
+    url(images/backgroundF35_BAE.png);
+
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+  color: white
+}
+
+textarea {
+  width: 80%;
+  height: 400px;
+  padding: 12px 12px;
+  box-sizing: border-box;
+  border: 2px solid #000;
+  border-radius: 1px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+
+select {
+  width: 40%;
+  padding: 12px 12px;
+  border: 6; /* none; */
+  border-radius: 12px;
+  background-color: #ED1A3B; //#ff8f8f8;
+}
+
+input[type=submit] {
+  background-color: #ED1A3B; //#04AA6D;
+  color: white;
+  padding: 12px 12px;
+  border: 6;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 12px;
+}
+
+input:hover[type="submit"] {
+  background: #004A00;
+}
+
+
+.button {
+  background-color: #04AA6D; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.buttonRed {
+  background-color: #BA0000; /* Red */
+  color: white;
+  padding: 12px 12px;
+  border: 6;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 12px;
+}
+
+.buttonBlue {
+  background-color: #0040BA; /* Blue */
+  color: white;
+  padding: 12px 12px;
+  border: 6;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 12px;
+}
+
+.buttonGreen {
+  background-color: #008C00; /* Green */
+  color: white;
+  padding: 12px 12px;
+  border: 6;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 12px;
+}
+
+.buttonYellow {
+  background-color: #E0E000; /* Yellow */
+  color: white;
+  padding: 12px 12px;
+  border: 6;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 12px;
+}
+
+.buttonPurple {
+  background-color: #D700FF; /* Purple */
+  color: white;
+  padding: 12px 12px;
+  border: 6;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 12px;
+}
+
+.buttonOrange {
+  background-color: #FF7D00; /* Orange */
+  color: white;
+  padding: 12px 12px;
+  border: 6;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 12px;
+}
