@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebForm</title>
+    <link rel="icon" type="image/x-icon" href="images/faviconBAE64x64.png">
+    <link rel="stylesheet" type="text/css" href="basic.css">
+</head>
+
+<body>
+    
+    
+
+
+    
+    
+    
+<button class="tablink" onclick="openPage('Message', this, '#ED1A3B')" id="defaultOpen">Send Message</button>
+<button class="tablink" onclick="openPage('News', this, 'green')" >News</button>
+<button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
+<button class="tablink" onclick="openPage('About', this, 'orange')">About</button>
+
+<div id="Message" class="tabcontent">
+    <br/>
+  <h1>Send Message</h1>
+
+
+
+
+
+
+
+    
+    
+    
+<!--    
+<div class="container">
+    <h1>Last price</h1>
+    <p>To retrieve the last emitted price, click on the <code>Fetch</code> button.</p>
+    <div class="row">
+        <p class="col-md-1"><button class="btn btn-info" id="fetch">Fetch</button></p>
+        <p class="col-md-6">The last price is <strong><span id="content">N/A</span>&nbsp;&euro;</strong>.</p>
+    </div>
+</div>
+
+    
+<div class="container">
+    <h1>Last Message Type</h1>
+    <p>To retrieve the last message type, click on the <code>LastMessageType</code> button.</p>
+    <div class="row">
+        <p class="col-md-1"><button class="btn btn-info" id="lastMsgType">LastMsgType</button></p>
+        <p class="col-md-6">The last message type is <strong><span id="contentMessage">N/A</span></strong>.</p>
+    </div>
+</div>
+<br>
+
+<button class="button buttonRed">But1</button>
+<button class="button buttonGreen">But2</button>
+<button class="button buttonBlue">But3</button>
+<button class="button buttonYellow">But4</button>
+<button class="button buttonPurple">But5</button>
+<button class="button buttonOrange">But6</button>
+
+-->
+
+<form action="/api/v1/message" id="messageform">
+    <label for="message">Message Name: </label><br>
+
+    <select id="messagenameId" name="messagename">
+      <option value="Message_01">Message_01</option>
+      <option value="Message_02">Message_02</option>
+      <option value="Message_03">Message_03</option>
+      <option value="Message_04">Message_04</option>
+      <option value="Message_05">Message_05</option>
+      <option value="Message_06">Message_06</option>
+      <option value="Message_07">Message_07</option>
+      <option value="Message_08">Message_08</option>
+      <option value="Message_09">Message_09</option>
+      <option value="Message_10">Message_10</option>
+    </select>
+    <input type="checkbox" checked="checked" id="validateCB" name="validateCB" value="True">
+    <label for="validateCB">Validate Message</label>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="submit" value="Send XML">
+</form>
+<br/>
+<label for="lname">XML Message to send:</label><br>
+<textarea id="messagexmlid" name="messagexml" form="messageform" rows="40" cols="80">Enter XML message text</textarea>
+
+
+
+</div>
+
+
+
+
+
+
+<div id="News" class="tabcontent">
+  <h3>News</h3>
+  <p>Some news this fine day!</p>
+</div>
+
+<div id="Contact" class="tabcontent">
+  <h3>Contact</h3>
+  <p>Get in touch, or swing by for a cup of coffee.</p>
+</div>
+
+<div id="About" class="tabcontent">
+  <h3>About</h3>
+  <p>Who we are and what we do.</p>
+</div>
+
+
+
+<footer>
+    <p>Copyright 2024<br></p>
+</footer>
+
+</body>
+<script>
+    
+    
+    
+function openPage(pageName, elmnt, color) {
+  // Hide all elements with class="tabcontent" by default */
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Remove the background color of all tablinks/buttons
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+
+  // Show the specific tab content
+  document.getElementById(pageName).style.display = "block";
+
+  // Add the specific color to the button used to open the tab content
+  elmnt.style.backgroundColor = color;
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    document.getElementById("fetch").addEventListener("click", function() {
+        fetch("/api/v1/last").then(function (response) {
+            response.text().then(function (text) {
+                document.getElementById("content").textContent = text;
+            })
+        })
+    })
+    
+    document.getElementById("lastMsgType").addEventListener("click", function() {
+        fetch("/api/v1/lastmessagetype").then(function (response) {
+            response.text().then(function (text) {
+                document.getElementById("contentMessage").textContent = text;
+            })
+        })
+    })
+</script>
+</html>
